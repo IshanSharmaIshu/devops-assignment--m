@@ -15,7 +15,8 @@ This repository contains the configuration files for deploying a Rails applicati
 ## Project Structure
 
 devops-assignment--m/
-├── Dockerfile            # Defines how to build the Docker image for the Rails app
+├── Dockerfile            
+    # Defines how to build the Docker image for the Rails app
 
 ├── docker-compose.yml    # Used for local development with Docker
 
