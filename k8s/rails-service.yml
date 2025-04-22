@@ -1,0 +1,11 @@
+# k8s/rails-service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: rails-service
+spec:
+  selector:
+    app: rails
+  ports:
+    - port: 80
+      targetPort: 3000

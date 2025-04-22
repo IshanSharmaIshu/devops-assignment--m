@@ -1,0 +1,11 @@
+# tekton/pvc.yml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: tekton-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

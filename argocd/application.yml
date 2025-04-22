@@ -1,0 +1,19 @@
+# argocd/application.yml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rails-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/IshanSharmaIshu/devops-assignment--m.git # Updated with your GitHub repository link
+    targetRevision: HEAD
+    path: k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true

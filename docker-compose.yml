@@ -1,0 +1,23 @@
+# docker-compose.yml
+version: '3.8'
+services:
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  web:
+    build: .
+    command: bash -c "bundle exec rails db:prepare && rails s -b '0.0.0.0'"
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://postgres:password@db:5432
+volumes:
+  pgdata:

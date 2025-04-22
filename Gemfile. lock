@@ -1,0 +1,4 @@
+# Gemfile.lock
+# You can generate this with:
+# docker-compose run web bundle install
+# If needed, I can give you a sample too.

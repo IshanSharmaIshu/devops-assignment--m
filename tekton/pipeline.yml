@@ -1,0 +1,22 @@
+# tekton/pipeline.yml
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: docker-build-pipeline
+spec:
+  params:
+    - name: IMAGE
+      type: string
+    - name: CONTEXT
+      type: string
+  tasks:
+    - name: build-and-push
+      taskRef:
+        name: kaniko
+      params:
+        - name: IMAGE
+          value: $(params.IMAGE)
+        - name: CONTEXT
+          value: $(params.CONTEXT)
+      workspaces:
+        - name: shared-workspace
