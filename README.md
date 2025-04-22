@@ -18,24 +18,43 @@ devops-assignment--m/
 ├── Dockerfile            # Defines how to build the Docker image for the Rails app
 
 ├── docker-compose.yml    # Used for local development with Docker
+
 ├── entrypoint.sh         # Entrypoint script for the Docker container
+
 ├── Gemfile               # Ruby dependencies for the Rails app
+
 ├── Gemfile.lock          # Specific versions of Ruby dependencies
+
 ├── k8s/                  # Kubernetes configuration files
+
 │   ├── rails-deployment.yaml   # Defines how to deploy the Rails app
+
 │   ├── postgres-statefulset.yaml # Defines how to deploy the PostgreSQL database
+
 │   ├── postgres-service.yaml    # Internal DNS name and IP for PostgreSQL
+
 │   ├── rails-service.yaml       # Internal DNS name and IP for the Rails app
+
 │   └── ingress.yaml           # Configures external access to the Rails app
+
 ├── argocd/               # Argo CD (GitOps) configuration files
+
 │   ├── application.yaml       # Defines the Argo CD application to manage the Rails deployment
+
 │   ├── argocd-cm.yaml         # Argo CD ConfigMap (instance label key)
+
 │   └── argocd-rbac-cm.yaml    # Argo CD RBAC ConfigMap (default policy)
+
 └── tekton/               # Tekton (CI/CD) pipeline files
+
 ├── kaniko-sa.yaml         # Kubernetes ServiceAccount and Secret for Kaniko (Docker Hub credentials)
+
 ├── pvc.yaml               # PersistentVolumeClaim for Tekton workspace
+
 ├── pipeline.yaml          # Defines the Tekton CI pipeline (build and push Docker image)
+
 └── taskrun.yaml           # Example of how to run the Tekton pipeline
+
 
 ## Getting Started
 
