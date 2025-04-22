@@ -16,6 +16,7 @@ This repository contains the configuration files for deploying a Rails applicati
 
 devops-assignment--m/
 ├── Dockerfile            # Defines how to build the Docker image for the Rails app
+
 ├── docker-compose.yml    # Used for local development with Docker
 ├── entrypoint.sh         # Entrypoint script for the Docker container
 ├── Gemfile               # Ruby dependencies for the Rails app
